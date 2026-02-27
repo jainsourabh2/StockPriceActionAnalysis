@@ -1,8 +1,8 @@
 # Financial Agent for Indian Markets
 
-A hands-on project showing how to build an AI-powered financial analysis agent for Indian equities using [AngelOne's SmartAPI](https://smartapi.angelbroking.com/) and [Claude](https://docs.anthropic.com/en/docs/overview) (Anthropic's API).
+A hands-on project showing how to build an AI-powered financial analysis agent for Indian equities using [AngelOne's SmartAPI](https://smartapi.angelbroking.com/) and Google Gemini
 
-You feed it a stock ticker. It pulls live market data from NSE/BSE, runs it through Claude, and gives you a structured analysis — trend direction, support/resistance levels, volume analysis, and a plain English summary. There's also an enhanced version that cross-references options chain data (IV, OI, Greeks) against price action.
+You feed it a stock ticker. It pulls live market data from NSE/BSE, runs it through Gemini, and gives you a structured analysis — trend direction, support/resistance levels, volume analysis, and a plain English summary. There's also an enhanced version that cross-references options chain data (IV, OI, Greeks) against price action.
 
 **This is not a trading bot.** It's a starting point to show what's possible when you combine a free brokerage API with an LLM. Think of it as building blocks for something bigger.
 
@@ -41,7 +41,7 @@ No rate limit gotchas for normal usage. No surprise bills. It just works.
 
 - Python 3.8+
 - An AngelOne trading account
-- An Anthropic API key (for Claude)
+- An Google Gemini API key (for Gemini)
 
 ---
 
@@ -66,9 +66,9 @@ You'll need these four things:
 - Password (your trading PIN)
 - TOTP Secret (the base32 string, NOT the 6-digit code)
 
-### 2. Get your Anthropic API key
+### 2. Get your Google Gemini API key
 
-1. Go to [console.anthropic.com](https://console.anthropic.com/)
+1. Go to [https://aistudio-preprod.corp.google.com/api-keys](https://aistudio-preprod.corp.google.com/api-keys
 2. Sign up or log in
 3. Go to **API Keys** → **Create Key**
 4. Save the key
@@ -98,7 +98,7 @@ ANGELONE_API_KEY=your_smartapi_key_here
 ANGELONE_CLIENT_ID=A12345678
 ANGELONE_PASSWORD=1234
 ANGELONE_TOTP_SECRET=your_totp_base32_secret
-ANTHROPIC_API_KEY=sk-ant-...
+GOOGLE_CLOUD_API_KEY=your_gemini_api_key_here
 ```
 
 ### 5. Test the connection
@@ -158,7 +158,7 @@ Output:
 ```
 Connecting to AngelOne SmartAPI...
 Fetching 30 days of data for RELIANCE (token: 2885)...
-Sending data to Claude for analysis...
+Sending data to Gemini for analysis...
 
 ══════════════════════════════════════════════
   ANALYSIS REPORT: RELIANCE
@@ -244,5 +244,3 @@ This project is for **educational purposes only**. It is not financial advice.
 MIT — do whatever you want with it.
 
 ---
-
-Built by [Anish](https://github.com/AM1403x). If you found this useful, star the repo.
