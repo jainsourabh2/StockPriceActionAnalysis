@@ -1,0 +1,8 @@
+smartapi-python
+pyotp
+anthropic
+python-dotenv
+logzero
+requests
+websocket
+google-genai
